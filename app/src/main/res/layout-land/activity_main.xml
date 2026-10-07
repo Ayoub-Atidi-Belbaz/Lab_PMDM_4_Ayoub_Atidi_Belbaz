@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Guia para dividir en dos columnas  -->
+    <!-- Guía para dividir en dos columnas (50%) -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -28,34 +28,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline" />
 
-    <!-- Columna Derecha: Facciones agrupadas -->
-    <Button
-        android:id="@+id/btnGondor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/gondor"
+    <!-- Columna Derecha: Logos agrupados -->
+    <ImageView
+        android:id="@+id/ivGondor"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/gondor"
+        android:src="@drawable/foto_gondor"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnRohan"
+        app:layout_constraintBottom_toTopOf="@+id/ivRohan"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
-        android:id="@+id/btnRohan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/rohan"
-        app:layout_constraintTop_toBottomOf="@+id/btnGondor"
-        app:layout_constraintBottom_toTopOf="@+id/btnMordor"
+    <ImageView
+        android:id="@+id/ivRohan"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/rohan"
+        android:src="@drawable/foto_rohan"
+        app:layout_constraintTop_toBottomOf="@+id/ivGondor"
+        app:layout_constraintBottom_toTopOf="@+id/ivMordor"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/btnMordor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mordor"
-        app:layout_constraintTop_toBottomOf="@+id/btnRohan"
+    <ImageView
+        android:id="@+id/ivMordor"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/mordor"
+        android:src="@drawable/foto_sauron"
+        app:layout_constraintTop_toBottomOf="@+id/ivRohan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent" />

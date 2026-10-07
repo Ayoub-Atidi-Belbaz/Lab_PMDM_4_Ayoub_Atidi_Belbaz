@@ -8,15 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- GuIa para dividir en dos columnas  -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <!-- Columna Izquierda: El Anillo -->
+    <!-- Elemento Central: El Anillo Único -->
     <ImageView
         android:id="@+id/ivAnillo"
         android:layout_width="100dp"
@@ -26,38 +18,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline" />
-
-    <!-- Columna Derecha: Facciones agrupadas -->
-    <Button
-        android:id="@+id/btnGondor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/gondor"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnRohan"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="spread" />
 
-    <Button
-        android:id="@+id/btnRohan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/rohan"
-        app:layout_constraintTop_toBottomOf="@+id/btnGondor"
-        app:layout_constraintBottom_toTopOf="@+id/btnMordor"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!-- Facciones en Órbita Circular (Logos) -->
+    <ImageView
+        android:id="@+id/ivGondor"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/gondor"
+        android:src="@drawable/foto_gondor"
+        app:layout_constraintCircle="@+id/ivAnillo"
+        app:layout_constraintCircleRadius="140dp"
+        app:layout_constraintCircleAngle="0" />
 
-    <Button
-        android:id="@+id/btnMordor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mordor"
-        app:layout_constraintTop_toBottomOf="@+id/btnRohan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <ImageView
+        android:id="@+id/ivRohan"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/rohan"
+        android:src="@drawable/foto_rohan"
+        app:layout_constraintCircle="@+id/ivAnillo"
+        app:layout_constraintCircleRadius="140dp"
+        app:layout_constraintCircleAngle="120" />
+
+    <ImageView
+        android:id="@+id/ivMordor"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/mordor"
+        android:src="@drawable/foto_sauron"
+        app:layout_constraintCircle="@+id/ivAnillo"
+        app:layout_constraintCircleRadius="140dp"
+        app:layout_constraintCircleAngle="240" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
